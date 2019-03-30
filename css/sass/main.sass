@@ -1,0 +1,389 @@
+@import "bourbon/bourbon"
+
+
+body
+	font-family: "NewtSerif", sans-serif
+	font-weight: bold
+	font-size: 14px
+	min-width: 320px
+	position: relative
+	line-height: 1.42857
+	-webkit-font-smoothing: antialised
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: red
+body input:required:valid,
+body textarea:required:valid
+	color: green
+
+.row
+	padding: 0
+	margin: 0
+
+.loader
+	background: none repeat scroll 0 0 #fff
+	bottom: 0
+	height: 100%
+	left: 0
+	position: fixed
+	right: 0
+	top: 0
+	width: 100%
+	z-index: 9999
+	.loader_inner
+		background-image: url("../img/prel.gif")
+		background-size: cover
+		background-repeat: no-repeat
+		background-posirion: center center
+		background-color: #fff
+		height: 180px
+		width: 180px
+		margin-top: -30px
+		margin-left: -30px
+		left: 50%
+		top: 50%
+		position: absolute
+
+.toggle_mnu
+	width: 60px
+	height: 60px
+	position: fixed
+	z-index: 100
+	border-radius: 50%
+	border-color: #fff
+	left: 20px
+	top: 20px
+	span
+		display: block
+
+
+$w: 28px
+$h: 3px
+
+.sandwich 
+	width: $w
+	height: $w
+	position: absolute
+	top: 8px
+	bottom: 0
+	left: 0
+	right: 0
+	margin: auto
+	z-index: 200
+
+.sw-topper
+	position: relative
+	top: 0
+	width: $w 
+	height: $h
+	background: rgba(144, 159, 162, 1)
+	border: none
+	border-radius: 4px 4px 4px 4px
+	transition: transform 0.5s, top 0.2s
+	display: block
+			
+	//transition-delay: 0.2s, 0s
+
+.sw-bottom
+	position: relative
+	width: $w
+	height: $h
+	top: $h * 2.2
+	background: rgba(144, 159, 162, 1)
+	border: none
+	border-radius: 4px 4px 4px 4px
+	transition: transform 0.5s, top 0.2s
+	transition-delay: 0.2s, 0s
+.sw-footer
+	position: relative
+	width: $w
+	height: $h
+	top: $h * 4.5
+	background: rgba(144, 159, 162, 1)
+	border: none
+	border-radius: 4px 4px 4px 4px
+	transition: all 0.5s
+	transition-delay: 0.1s
+.sandwich.active
+	.sw-topper
+		top: 9px
+		transform: rotate(-45deg)
+	.sw-bottom
+		top: 6px
+		transform: rotate(45deg)
+	.sw-footer
+		opacity: 0
+		top: 0
+		transform: rotate(180deg)
+
+.top_mnu
+	position: fixed
+	width: 100%
+	height: 100%
+	background-color: rgba(51,51,51,.95)
+	z-index: 50
+	right: 0
+	top: 0
+	display: none
+	ul,
+	li
+		list-style-type: none
+		padding: 0
+		margin: 0
+	ul
+		margin-top: 180px
+		text-align: center
+		+animation-duration(.01s)
+		li
+			&:nth-child(1) a
+				+animation-delay(0)
+			&:nth-child(2) a
+				+animation-delay(.1s)
+			&:nth-child(3) a
+				+animation-delay(.2s)
+			&:nth-child(4) a
+				+animation-delay(.3s)
+		a
+			color: #fff
+			display: block
+			text-transform: uppercase
+			font-size: 12px
+			opacity: 0
+			position: relative
+			height: 60px
+			outline: none
+			span
+				display: block
+				position: relative
+				top: -40px
+				left: 0
+				height: 100%
+				+transition(all 0.5s ease)
+				&:hover
+					background-color: rgba(255,255,255,.08)
+
+.my_head
+	position: relative
+	margin-bottom: -400px
+	h1
+		display: inline-block
+		text-align: center
+		font-weight: 400
+		font-size: 12px
+		opacity: 80
+
+	p
+		color: #bdcbd2
+		font-size: 14em
+		opacity: 0.20
+		margin-top: -73px
+		position: fixed
+		right: 339px
+		top: 66px
+
+
+
+.top_wrapper
+	display: inline-block
+	width: 100%
+	height: 100%
+	z-index: 10
+	text-align: center
+	.top_descr
+		display: inline-block
+		padding: 5px 35px
+		.top_centered
+			display: inline-block
+			text-align: center
+			vertical-align: middle
+	.top_text
+		+transition(all 1s ease)
+		p
+			text-transform: uppercase
+			+animation-delay(1s)
+		h1
+			margin: -6px
+			padding: 6px 22px 2px 22px
+			display: inline-block
+			color: #fff
+			font-size: 3em
+			background-color: #80b7b2
+			opacity: 80
+			+animation-delay(.5s)
+			font-style: italic
+			font-family: NewtSerifBold
+			z-index: 200
+			box-shadow: 0 10px 6px rgba(0,0,0,0.35)
+
+.toggle_mnu
+	background-color: #fff
+	float: left
+
+.logo_container
+	height: 160px
+	width: 160px
+	position: fixed
+	right: -28px
+	top: -62px
+	fill: #fff
+	padding: 0
+	margin: -38px 25px 0 0
+	svg
+		path
+			fill: rgba(144, 159, 162, 1)
+
+.begin
+	padding-bottom: 70px
+	
+.begin_img
+	img
+		border: 16px solid #fff
+		height: 185px
+		width: auto
+		margin-left: -44px
+		margin-top: 57px
+		box-shadow: 0 10px 6px rgba(0,0,0,0.25)
+
+
+.middle
+	img
+		border: 16px solid #fff
+		height: 406px
+		width: auto
+		margin-left: 176px
+		border-right: none
+		box-shadow: 0 10px 6px rgba(0,0,0,0.25)
+
+		
+
+.hidden
+	display: none
+
+.begin_text, .st_tell
+	h3, p
+		font-family: Georgia
+		font-style: oblique
+		margin-bottom: 40px
+	a
+		text-transform: uppercase
+		font-size: 15px
+		font-family: Palatino Linotype
+		border-radius: 18px
+		border: 10px solid #80b7b2
+		background-color: #80b7b2
+h2
+	text-transform: uppercase
+	font-weight: 2
+	font-size: 14px
+	color: #b4b4b4
+
+.story_text
+	position: relative
+	top: 93px
+	left: 11px
+	h2,
+	h3
+		text-align: center
+		margin-right: 42px
+		font-weight: 400
+	h3
+		margin: 21px 233px 0 130px
+		letter-spacing: .2em
+
+.st_img
+	img
+		height: 600px
+		border: 16px solid #fff
+		box-shadow: 8px 8px 22px rgba(0, 0, 0, 0.25)
+		margin-top: 161px
+		margin-left: 122px
+		position: relative
+
+.st_tell
+	margin: 40px 129px 0 130px
+	letter-spacing: 0.2em
+	text-align: center
+	a
+		float: left
+
+.video
+	padding-top: 121px
+
+.container
+	.row
+		.phrase_cont
+			display: inline-block
+			margin-top: 150px
+			position: relative
+			h1, h3
+				font-family: Georgia
+.pic
+	img
+		border: 16px solid #fff
+		height: 321px
+		margin-left: 79px
+		margin-top: 54px
+		box-shadow: 8px 8px 22px rgba(0, 0, 0, 0.25)
+
+.who_wrap
+	margin: 108px -195px 0 148px
+
+.ur_story .story_wrap 
+	.text_wrap
+	margin: 232px -69px 0 -392px
+	background-color: #fff
+	padding: 30px
+	box-shadow: 8px 8px 22px rgba(0, 0, 0, 0.25)
+	h1
+		text-align: center
+		font-style: italic
+	a
+		text-transform: uppercase
+		font-size: 15px
+		font-family: Palatino Linotype
+		border-radius: 18px
+		border: 10px solid #80b7b2
+		background-color: #80b7b2
+		position: relative
+		left: 192px
+		top: 35px
+
+
+.container
+	.forma
+		background-color: #3c4f56
+		padding-bottom: 78px
+		padding-top: 55px
+		text-align: center
+		opacity: 0.9
+		margin: 186px 369px
+		p
+			color: #fff
+		a
+			text-transform: uppercase
+			font-size: 15px
+			font-family: Palatino Linotype
+			border-radius: 18px
+			border: 10px solid #80b7b2
+			background-color: #80b7b2
+			top: 37px
+			position: relative
+		input
+			border-radius: 14px
+			font-size: 15px
+			margin-top: 7px
+			opacity: 0.75
+			padding-top: 7px
+.contakts 
+	background-image: url("../img/woods.jpg") 
+	background-color: #cccccc
+	background-repeat: no-repeat
+	height: 100%
+	opacity: 0.6
+	margin-top: 155px
+	margin-bottom: 0px
+
+	.row 
+		padding: 2px 1px
+		margin: 14px 12px
